@@ -1,0 +1,33 @@
+@import "config";
+
+body {
+    background-color: $background-color !important;
+    header {
+        background-color: $background-color !important;
+        padding: 10px 10px 5px 5px;
+        display: flex;
+        margin-top: 4%;
+        max-width: 80%;
+        max-height: 80%;
+        #top-nav {
+            background-color: $background-color !important;
+            .navbar-toggler {
+                background-color: white !important;
+            }
+            #offcanvasNavbar {
+                background-color: $background-color !important;
+                color: $font-color !important;
+            }
+            .nav-link {
+                color: $font-color !important;
+            }
+        }
+        .banner {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

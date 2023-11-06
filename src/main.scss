@@ -1,0 +1,26 @@
+@import "config";
+@import "footer";
+@import "body";
+
+main {
+    div {
+        nav {
+            background-color: $background-color;
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            li {
+                display: inline;
+                margin: 0 20px;
+            }
+            a {
+                text-decoration: none;
+                color: $font-color;
+            }
+        }
+    }
+}

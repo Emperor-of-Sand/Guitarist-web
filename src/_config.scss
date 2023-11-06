@@ -1,0 +1,23 @@
+/* Grid columns */
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+$grid-row-columns: 6;
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+/* Container widths */
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);
+$background-color: rgb(0, 4, 5);
+$font-color: aliceblue;
+$bsh: 0px 10px 10px rgba(255, 255, 255, 0.947);
