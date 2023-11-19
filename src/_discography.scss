@@ -1,83 +1,108 @@
 @import "config";
 
-.discography {
-    .album {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, ninmax(400px, 1fr));
-        grid-gap: 20px;
-        padding: 20px;
-
-        .albumimg {
-            width: 100%;
-            border-radius: 30px;
-        }
-        .albumimg2 {
-            width: 40%;
-            height: auto;
-            margin-left: 40px;
-            border-radius: 30px;
-            grid-column: 1 / span 2;
-            grid-row: 2 / span 1;
-        }
-        .album-info {
-            color: $font-color;
-            list-style-position: inside;
-            grid-template-columns: 150px 1fr;
-            grid-gap: 10px;
-            align-items: center;
-        }
-
-        .player {
-            width: 100%;
-            height: 200px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            grid-column: 4 / span 2;
-            grid-row: 1 / span 2;
-        }
-
-        .spotify-link,
-        .spotify-link2 {
-            grid-template-columns: 150px 1fr;
-            bottom: 10px;
-            left: 50%;
-            padding: 8px 16px;
-            background-color: #1db954;
-            color: #ffffff;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-
-            &:hover {
-                background-color: #169246;
-            }
-        }
-    }
-
-    @media only screen and (max-width: 768px) {
-        .albumimg,
-        .albumimg2,
-        .album-info,
-        .player {
-            width: 100%;
-            margin-left: 0;
-            grid-column: auto;
-            grid-row: auto;
-        }
-
-        .albumimg {
-            border-radius: 0;
-        }
-
-        .spotify-link,
-        .spotify-link2 {
-            transform: translate(-50%, -50%);
-        }
+.album {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, fit-content);
+    grid-gap: 20px;
+    height: auto;
+    justify-content: center;
+}
+.item {
+    justify-content: center;
+    align-items: center;
+}
+.albumimg {
+    grid-column: 1;
+    grid-row: 1;
+    align-items: center;
+    img {
+        border-radius: 30px;
+        padding-left: 60px;
+        max-width: 100%;
+        height: auto;
+        display: block;
     }
 }
+.album-info {
+    padding-top: 30px;
+    color: $font-color;
+    list-style-position: inside;
+    text-align: center;
+    grid-column: 2;
+    grid-row: 1;
+}
+.player {
+    grid-column: 2;
+    grid-row: 2;
+    padding-bottom: 50px;
+}
+.link {
+    grid-column: 1;
+    grid-row: 2;
+    position: relative;
+    left: 40%;
+}
+.spotify-link {
+    bottom: 10px;
+    left: 50%;
+    padding: 8px 16px;
+    background-color: #1db954;
+    color: #ffffff;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
 
+    &:hover {
+        background-color: #169246;
+    }
+}
 h1 {
     color: $font-color !important;
     text-align: center;
+    margin: 0 0 5px 0;
+    padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    .album {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 20px;
+        justify-content: center;
+    }
+
+    .albumimg {
+        grid-column: 1;
+        grid-row: 1;
+        align-items: center;
+
+        img {
+            border-radius: 30px;
+            padding-left: 0;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    .album-info,
+    .player,
+    .link {
+        grid-column: 1;
+        grid-row: auto;
+        padding: 10px;
+    }
+
+    .link {
+        position: static;
+        left: auto;
+        text-align: center;
+    }
+
+    h1 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
